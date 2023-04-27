@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="workout%20style.css">
+    <title>
+        WORKOUT VIDEOS TO GET YOU STARTED
+    </title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>WORKOUT VIDEOS TO GET YOU STARTED</h1>
+        <div id="video_player">
+            <video controls poster="images/img%201.jpg" class="video" id="video">
+                <source src="videos/workout%20video.mp4.mp4" type="video/mp4">
+
+            </video>
+        </div>
+        <div class="scrollBox">
+            <div class="box">
+                <img src="images/img%201.jpg">
+                <div class="box-content">
+                    <h3>WORKOUT 2</h3>
+                    <a>
+                    <video controls poster="images/img%201.jpg" class="video" id="video" src="videos/yt5s.com-EP.2%20Quarantine%20workout%20_%20How%20to%20exercise%20to%20keep%20your%20immune%20system%20healthy%20_%20Bumrungrad(360p).mp4" type="video/mp4" class="btn"></video>Watch</a>             
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/img%201.jpg">
+                <div class="box-content">
+                    <h3>WORKOUT 3</h3>
+                <a>
+                    <video controls poster="images/img%201.jpg" class="video" id="video" src="videos/yt5s.com-Lose%20Weight%20_%20Exercises%20To%20Lose%20Belly%20Fat%20_%20Exercises%20To%20Lose%20Weight-(480p).mp4" type="video/mp4" class="btn"></video>Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/img%201.jpg">
+                <div class="box-content">
+                    <h3>4</h3>
+                    <a>
+                    <video controls poster="images/img%201.jpg" class="video" id="video" src="videos/yt5s.com-Direction%20Specific%20Exercises%20for%20Low%20Back%20Pain%20_%20Directional%20Preference-(480p).mp4" type="video/mp4" class="btn"></video>Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/img%201.jpg">
+                <div class="box-content">
+                    <h3>5</h3>
+                    <a>
+                    <video controls poster="images/img%201.jpg" class="video" id="video" src="videos/swim.mp4" type="video/mp4" class="btn"></video>Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/img%201.jpg">
+                <div class="box-content">
+                    <h3>6</h3>
+                   <a>
+                    <video controls poster="images/img%201.jpg" class="video" id="video" src="videos/yt5s.com-EP.2%20Quarantine%20workout%20_%20How%20to%20exercise%20to%20keep%20your%20immune%20system%20healthy%20_%20Bumrungrad(360p).mp4" type="video/mp4" class="btn"></video>Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/img%201.jpg">
+                <div class="box-content">
+                    <h3>7</h3>
+                   <a>
+                    <video controls poster="images/img%201.jpg" class="video" id="video" src="videos/yt5s.com-Lose%20Weight%20_%20Exercises%20To%20Lose%20Belly%20Fat%20_%20Exercises%20To%20Lose%20Weight-(480p).mp4" type="video/mp4" class="btn"></video>Watch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ###########################javascript for video Player################ -->
+
+    <script type="text/javascript">
+        let anchors = document.querySelectorAll('div .btn');
+        let links = [...anchors];
+
+        for (let i = 0; i < links.length; i++) {
+            links[i].onclick = handler;
+        }
+        function handler(e) {
+            e.preventDefault();
+            let videotarget = this.getAttribute("href");
+            let filename = videotarget.substr(0, videotarget.lastIndexOf('.'));
+            let video = document.getElementById("video");
+            video.removeAttribute("poster");
+            let source = document.querySelectorAll("#video_player video source");
+            source[0].src = filename + ".mp4";
+            source[1].src = filename + ".m4v";
+            video.load();
+            video.play();
+        }
+    </script>
+</body>
+    <style>
+        h1{
+            color:#00ffff;
+        }
+        body{
+            background: #191919;
+        }
+        .scrollBox{
+            background: #00ffff;
+        }
+    </style>
+
+</html>
